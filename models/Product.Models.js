@@ -5,6 +5,7 @@
 //   description: String
 // });
 
+const mongoose = require('mongoose')
 
 const reviewSchema = new mongoose.Schema({
   reviewer: {
@@ -69,6 +70,10 @@ const productSchema = new mongoose.Schema({
       default: 0
   },  
   reviews: [reviewSchema],
+  tags: {
+    type: [String],
+    default: []
+  },
   createdAt: {
       type: Date,
       default: Date.now

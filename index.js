@@ -6,7 +6,7 @@ const app = express()
 const connectDB = require('./config/Db');
 const bodyParser = require('body-parser');
 const userRoutes = require('./routes/UserRoutes');
-// const productRoutes = require('./routes/ProductsRoutes');
+const productRoutes = require('./routes/ProductsRoutes');
 
 
 
@@ -18,8 +18,7 @@ const PORT = process.env.PORT;
 
 app.use(express.json());
 
-// app.use('/api/products', productRoutes);
-
+app.use('/api/products', productRoutes);
 app.use('/api/user', userRoutes);
 
 // Connect Database
